@@ -19,3 +19,12 @@ body {
   font-weight: bolder;
   color: #007bff;
 }
+
+.btn.rounded-right {
+  border-top-right-radius: .25rem;
+  border-bottom-right-radius: .25rem;
+}
+
+form.button_to {
+  text-align: center!important;
+}
