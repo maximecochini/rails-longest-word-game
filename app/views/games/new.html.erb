@@ -1,0 +1,18 @@
+<div class="container game">
+  <h1 class="text-center">New game</h1>
+
+  <ul class="m-4 justify-content-center list-group list-group-horizontal">
+    <% @letters.each do |letter| %>
+      <li class="list-group-item"><%= letter.capitalize %></li>
+    <% end %>
+  </ul>
+
+  <form class="input-group justify-content-center m-4 auto-width" action="/score" method="post">
+    <input name="word" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-primary" type="submit" id="button-addon2">Button</button>
+    </div>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
+  </form>
+</div>
