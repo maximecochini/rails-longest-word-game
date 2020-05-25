@@ -15,8 +15,10 @@
       <p class="text-center">Sorry but <strong><%= @result[:attempt].upcase%></strong> can't be built out of <%= @result[:letters].join(", ")%>.</p>
   <% elsif @result[:resolve] == 1 %>
       <p class="text-center">Sorry but <strong><%= @result[:attempt].upcase%></strong> does not seem to be a valid English word...</p>
+  <% elsif @result[:resolve] == 2 %>
+      <p class="text-center"><strong>Congratulations!</strong> <span><%= @result[:attempt].upcase %></span> is a valid English word!</p>
   <% else %>
-      <p class="text-center"><strong>Congratulations!</strong> <%= @result[:attempt].upcase %> is a valid English word!</p>
+      <p class="text-center">You didn't typed any word.</p>
   <% end %>
 
   <%= link_to "<- Play again", "/new" %>

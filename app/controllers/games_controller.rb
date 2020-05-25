@@ -9,7 +9,12 @@ class GamesController < ApplicationController
   def score
     @letters = params[:letters].split(" ")
     @attempt = params[:word]
-    if match?(@attempt, @letters) == false
+    if params[:word].size == 0
+      @result = { score: 0,
+                  resolve: -1,
+                  attempt: @attempt,
+                  letters: @letters }
+    elsif match?(@attempt, @letters) == false
       @result = { score: 0,
                   resolve: 0,
                   attempt: @attempt,
